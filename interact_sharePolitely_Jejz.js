@@ -11,7 +11,6 @@
 //export JD_SIGN_URL="sign地址" # ***必须要***
 //export ENABLE_CACHE_TOKEN="false" # 本地缓存Token，默认关
 //export TOKEN_CACHE_TIME="15" # Token过期时间，默认15分钟
-//export INPUT_ADDRESS="省份,城市,区县,详细地址,手机号,邮编,6位行政区划代码,收件人" # 多个用|或换行分隔
 [task_local]
 # 分享有礼（interact）
 7 7 7 7 7  interact_sharePolitely_Jejz.js, tag=分享有礼（interact）, enabled=true
