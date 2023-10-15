@@ -1,7 +1,7 @@
 /*
 活动链接：https://txzj-isv.isvjcloud.com/sign_in/home?a=TkdMS1RtdERLcjRGanNDZUZn
 活动变量：
-//export TXZJ_SIGN_URL="活动URL" # 多个用|或换行分隔
+//export TXZJ_SIGN_JK_URL="活动URL" # 多个用|或换行分隔
 //export DELAY_JEJZ="false" # 延迟开关，默认关
 //export RUN_NUM_JEJZ="5"  # 几个账号开始延迟，默认5个
 //export TIME_JEJZ="5000" # 默认5秒
@@ -17,14 +17,14 @@
 //export TOKEN_CACHE_TIME="15" # Token过期时间，默认15分钟
 //export TXZJ_SIGN_RUN_NUM="15" # 限帐号运行，默认无
 [task_local]
-# 签到有礼（txzj）
-7 7 7 7 7  txzj_Sign_Jejz.js, tag=签到有礼（txzj）, enabled=true
+# 签到有礼JK（txzj）
+7 7 7 7 7  txzj_Sign_jk_Jejz.js, tag=签到有礼JK（txzj）, enabled=true
 */
 
 //代理api
 let proxyPoolAPIs = []
 
-const $ = new Env('签到有礼（txzj）');
+const $ = new Env('签到有礼JK（txzj）');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -34,7 +34,7 @@ let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭
 process.env.API_PROXY_POOL ? process.env.API_PROXY_POOL.split(/[@,|\n]/).forEach(
     (item) => proxyPoolAPIs.push(item))
     : ''
-$.activityUrls = process.env.TXZJ_SIGN_URL ? process.env.TXZJ_SIGN_URL : '';
+$.activityUrls = process.env.TXZJ_SIGN_JK_URL ? process.env.TXZJ_SIGN_JK_URL : '';
 if ($.activityUrls.indexOf('a=') == -1 ){
     console.log(`❌ 没有链接，跑个啥！！`)
     return
@@ -195,7 +195,7 @@ if ($.isNode()) {
         }
      }
         if ($.message != '') {
-            await notify.sendNotify("签到有礼（txzj）" + `${j+1}`, `${$.message}\n\n\n${$.shopName}\n${$.prizeMsg}\n\n${$.shopIdUrl}\n活动链接\n${$.activityUrl}`)
+            await notify.sendNotify("签到有礼JK（txzj）" + `${j+1}`, `${$.message}\n\n\n${$.shopName}\n${$.prizeMsg}\n\n${$.shopIdUrl}\n活动链接\n${$.activityUrl}`)
             $.message = ''
             $.shopName = ''
             $.prizeMsg = ''
