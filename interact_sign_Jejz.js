@@ -23,7 +23,7 @@ https://lzkj-isv.isvjcloud.com/prod/cc/interactsaas/index?activityType=10002&tem
 */
 
 //跳出关键词
-let stopKeywords = ['来晚了', '已发完', '参数缺失或无效', '超出活动计划时间', '奖品发送失败', '发放完', '全部被领取', '余额不足', '已结束', '活动已经结束', '未开始', '不在签到时间范围内']
+let stopKeywords = ['来晚了', '已发完', '参数缺失或无效', '超出活动计划时间', '奖品发送失败', '发放完', '全部被领取', '余额不足', '已结束', '活动已经结束', '未开始']
 //代理api
 let proxyPoolAPIs = []
 
