@@ -17,7 +17,7 @@
 //export TOKEN_CACHE_TIME="15" # Token过期时间，默认15分钟
 [task_local]
 # 限量抢券（interact）
-7 7 7 7 7  interact_luckDraw_Jejz.js, tag=限量抢券（interact）, enabled=true
+7 7 7 7 7  interact_robCoupons_Jejz.js, tag=限量抢券（interact）, enabled=true
 */
 
 //代理api
